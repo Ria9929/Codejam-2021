@@ -1,0 +1,29 @@
+
+def reversort(L,N):
+    if L==[]:
+        return 0
+    
+    count=0
+    
+    for i in range(0,N-1):
+        j=L.index(min(L[i:]),i,N)
+        
+        if L[j]<L[i] and j>i and j<N:
+            
+            L[i:j+1]=L[i:j+1][::-1]
+        k=(j-i)+1
+        count+=k
+        
+            
+    return count
+        
+            
+#STDIN 
+if __name__=='__main__':
+    testcases=int(input())
+    for number in range(testcases):
+        N=int(input())
+        L=list(map(int,input().split(' ')))
+        #print(reversort(L,N))
+        print('Case #{}: {}'.format(number+1,reversort(L,N)) )
+    
